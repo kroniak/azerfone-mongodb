@@ -1,0 +1,47 @@
+version: '2'
+services:
+  mongo_cfg1:
+    image: mongo:latest
+    command: mongod --noprealloc --smallfiles --dbpath /data/db --configsvr --noauth --port 27019
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+  mongos1:
+    image: mongo:latest
+    depends_on: 
+      - mongo_cfg1
+    command: mongos --configdb mongo_cfg1:27019 --port 27017
+    environment:
+      TERM: xterm
+    ports:
+      - 27017:27017
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+  mongo_shard1:
+    image: mongo:latest
+    depends_on: 
+      - mongo_cfg1
+    command: mongod --noprealloc --smallfiles --dbpath /data/db --nojournal --oplogSize 16 --noauth --port 27018
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+  mongo_shard2:
+    image: mongo:latest
+    depends_on: 
+      - mongo_cfg1
+    command: mongod --noprealloc --smallfiles --dbpath /data/db --nojournal --oplogSize 16 --noauth --port 27018
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+  mongo_shard3:
+    image: mongo:latest
+    depends_on: 
+      - mongo_cfg1
+    command: mongod --noprealloc --smallfiles --dbpath /data/db --nojournal --oplogSize 16 --noauth --port 27018
+    environment:
+      TERM: xterm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro

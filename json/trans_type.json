@@ -1,0 +1,36 @@
+{
+    "msisdn": null,
+    "created": null,
+    "global_type": null,
+    "service_parameters": {
+        "id": "1231",
+        "partner_id": "123123",
+        "name": "123123 123123",
+        "report_name": "123123 123123",
+        "type": "12131"
+    },
+    "service_type_parameters": {
+        "unsubscribe_prefix": "stop dating",
+        "initialization_prefix": "start",
+        "tariffication_period": 1
+    },
+    "price": 0.12,
+    "price_category_id": 212131,
+    "operator_service_id": "321321321",
+    "debt_price": 0.01,
+    "debt_charge": 0,
+    "partial_price_category_id": [
+        "123123 123123/111/0,06 AZN ",
+        "123123 123123/111/0,03 AZN",
+        "123123 123123/111/0,09 AZN "
+    ],
+    "partial_price": [
+        0.06,
+        0.03,
+        0.09
+    ],
+    "short_number": "111",
+    "promo_channel_name": "Partner WEB sites",
+    "partner_name": "123123",
+    "currency": "123123"
+}
