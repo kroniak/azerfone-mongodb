@@ -1,0 +1,7 @@
+{
+  "name": "azerfone-mongodb",
+  "dependencies": {},
+  "globalDependencies": {
+    "mongodb": "registry:dt/mongodb#2.1.0+20161108152126"
+  }
+}
