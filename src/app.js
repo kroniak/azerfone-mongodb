@@ -6,8 +6,20 @@ var MongoClient = require('mongodb').MongoClient,
     fs = require('fs');
 
 const url = 'mongodb://docker:27017/testdb',
-    types = [100, 210, 220, 230, 240, 250, 260],
-    n = 100000;
+    types = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];//, 210, 210, 220, 230, 240, 250, 260],
+    n = 10000;
+
+const phones = [
+    () => { return '79214045559'; },
+    () => { return '79214040009'; },
+    () => { return '79214045559'; },
+    () => { return '79214040009'; },
+    () => { return '79214045559'; },
+    () => { return '79214040009'; },
+    () => { return '79214045559'; },
+    () => { return '79214040009'; },
+    () => { return getRandomInt(79211000000, 79219999999).toString(); }
+];
 
 let jsondata = fs.readFileSync('json/trans_type.json', 'utf8'),
     data = JSON.parse(jsondata);
@@ -39,7 +51,7 @@ co(function* () {
 function prepareData() {
     let result = Object.assign({}, data);
     result.global_type = types[Math.floor(Math.random() * types.length)];
-    result.msisdn = getRandomInt(79211000000, 79219999999).toString();
+    result.msisdn = phones[Math.floor(Math.random() * phones.length)]();
     result.created = new Date(Date.now()).toISOString();
 
     return result;
