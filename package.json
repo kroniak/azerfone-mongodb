@@ -26,7 +26,8 @@
     "mongodb": "^2.2.11"
   },
   "devDependencies": {
-    "eslint": "^3.10.2"
+    "eslint": "^3.10.2",
+    "eslint-config-mongodb-js": "^2.2.0"
   },
   "jshintConfig": {
     "esversion": 6

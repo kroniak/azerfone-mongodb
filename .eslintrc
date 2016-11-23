@@ -5,6 +5,15 @@
         "ecmaFeatures": {}
     },
     "rules": {
-        "semi": 2
+        "semi": 2,
+        "no-mixed-requires": 0,
+        "one-var": 0,
+        "indent": 0,
+        "no-use-before-define": 0,
+        "no-console": 0
+    },
+    "extends": "mongodb-js/node",
+    "env": {
+        "node": true
     }
 }
