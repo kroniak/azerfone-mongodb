@@ -23,12 +23,12 @@
   "dependencies": {
     "assert": "^1.4.1",
     "co": "^4.6.0",
-    "mongodb": "^2.2.10"
+    "mongodb": "^2.2.11"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2"
   },
   "jshintConfig": {
     "esversion": 6
-  },
-  "devDependencies": {
-    "eslint": "^3.9.1"
   }
 }

@@ -1,12 +1,10 @@
-const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
-
 var MongoClient = require('mongodb').MongoClient,
     co = require('co'),
     assert = require('assert'),
     fs = require('fs');
 
 const url = 'mongodb://docker:27017/testdb',
-    types = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];//, 210, 210, 220, 230, 240, 250, 260],
+    types = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 210, 210, 220, 230, 240, 250, 260],
     n = 10000;
 
 const phones = [
